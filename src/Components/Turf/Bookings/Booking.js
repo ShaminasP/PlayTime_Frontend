@@ -57,7 +57,7 @@ const Bookings = () => {
                 <tr key={index}>
                   <th>{booked?._id}</th>
                   <td>{booked?.user?.name}</td>
-                  <td>{booked?.bookDate}</td>
+                  <td>{new Date(booked?.bookDate).toLocaleDateString()}</td>
                   <td>{booked?.time}</td>
                   <td>
                     {" "}
@@ -80,7 +80,7 @@ const Bookings = () => {
                 <tr key={index}>
                   <th>{booked?._id}</th>
                   <td>{booked?.user?.name}</td>
-                  <td>{booked?.bookDate}</td>
+                  <td>{new Date(booked?.bookDate).toLocaleDateString()}</td>
                   <td>{booked?.time} </td>
                   <td>
                     {" "}
