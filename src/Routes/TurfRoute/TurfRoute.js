@@ -6,6 +6,7 @@ import BookingPage from "../../Pages/Turf/Bookings";
 import ReportPage from "../../Pages/Turf/ReportPage";
 import LoginPage from "../../Pages/User/LoginPage";
 import { useSelector } from "react-redux";
+import RegistrationCompleted from "../../Pages/Turf/TurfRegCompleted";
 
 const User = () => {
   const { token } = useSelector((state) => state.user);
@@ -26,6 +27,10 @@ const User = () => {
         <Route
           path="/reports"
           element={token ? <ReportPage /> : <LoginPage />}
+        />
+        <Route
+          path="/completed"
+          element={token ? <RegistrationCompleted /> : <LoginPage />}
         />
       </Routes>
     </>

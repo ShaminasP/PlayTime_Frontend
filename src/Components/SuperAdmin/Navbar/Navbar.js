@@ -5,10 +5,11 @@ import { setAdmin } from "../../../Store/AdminSlice";
 import { resetAdmin } from "../../../Store/AdminSlice";
 
 const Navbar = () => {
+  const Dispatch = useDispatch();
+
   const { token } = useSelector((state) => state.admin);
-  const adminToken = window.localStorage.getItem("token");
+  const adminToken = window.localStorage.getItem("adminToken");
   if (adminToken) {
-    const Dispatch = useDispatch();
     Dispatch(setAdmin(adminToken));
   }
   let Links = [
@@ -19,9 +20,10 @@ const Navbar = () => {
     { name: "SALES REPORT", link: "/admin/salesreports" },
   ];
   const Navigate = useNavigate();
+
   const handleLogout = () => {
-    window.localStorage.removeItem("token");
-    resetAdmin();
+    Dispatch(resetAdmin());
+    window.localStorage.removeItem("adminToken");
     Navigate("/admin/login");
   };
 

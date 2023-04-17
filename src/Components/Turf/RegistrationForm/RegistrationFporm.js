@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { turfRegister } from "../../../API/TurfAuth";
 import { Location_Search } from "../../../API/Mapbox";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AlertMessage from "../../AlertMessage/AlertMessage";
 import ModalMessage from "../../Modal/Modal.js";
 const RegistrationForm = () => {
@@ -16,12 +16,12 @@ const RegistrationForm = () => {
 
   const { token } = useSelector((state) => state.user);
   const Navigate = useNavigate();
+  const Dispatch = useDispatch();
 
   const [formData, setFormData] = useState(intialState);
   const [location, setLocation] = useState("");
   const [suggestion, setSuggestion] = useState([]);
   const [error, setError] = useState("");
-  const [modal, setModal] = useState("");
   const inputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -38,13 +38,14 @@ const RegistrationForm = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!token) {
-      Navigate('/login')
+      Navigate("/login");
     }
     const tufrsDetails = await turfRegister(formData, token);
     if (tufrsDetails.status === 400 || tufrsDetails.status === 401)
       return setError(tufrsDetails?.data?.message);
-    if (tufrsDetails.status === 200)
-      return setModal(tufrsDetails?.data?.message);
+    if (tufrsDetails.status === 200) {
+      Navigate("/turf/completed");
+    }
   };
 
   const handlePlace = (suggestion) => {
@@ -58,8 +59,6 @@ const RegistrationForm = () => {
 
   return (
     <>
-      {modal && <ModalMessage message={modal} close={() => setModal("")} />}
-
       <div className="flex items-center justify-center p-12 bg-gray-100">
         <div className="mx-auto w-full max-w-[550px]">
           {error && <AlertMessage message={error} close={() => setError("")} />}
