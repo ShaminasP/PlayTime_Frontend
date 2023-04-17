@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { turfRegister } from "../../../API/TurfAuth";
 import { Location_Search } from "../../../API/Mapbox";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import AlertMessage from "../../AlertMessage/AlertMessage";
-import ModalMessage from "../../Modal/Modal.js";
-const RegistrationForm = () => {
+const RegistrationForm = ({ div }) => {
   const intialState = {
     name: "",
     email: "",
@@ -16,7 +15,6 @@ const RegistrationForm = () => {
 
   const { token } = useSelector((state) => state.user);
   const Navigate = useNavigate();
-  const Dispatch = useDispatch();
 
   const [formData, setFormData] = useState(intialState);
   const [location, setLocation] = useState("");
@@ -59,7 +57,7 @@ const RegistrationForm = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center p-12 bg-gray-100">
+      <div ref={div} className="flex items-center justify-center p-12 bg-gray-100">
         <div className="mx-auto w-full max-w-[550px]">
           {error && <AlertMessage message={error} close={() => setError("")} />}
           <form onSubmit={onSubmit}>
@@ -68,7 +66,7 @@ const RegistrationForm = () => {
                 htmlFor="name"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Name
+               Turf Name 
               </label>
               <input
                 type="text"
@@ -85,7 +83,7 @@ const RegistrationForm = () => {
                 htmlFor="email"
                 className="mb-3 block text-base font-medium text-[#4d0731]"
               >
-                Email Address
+               Turf Email Address 
               </label>
               <input
                 type="email"
@@ -102,7 +100,7 @@ const RegistrationForm = () => {
                 htmlFor="contactNumber"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Contact Number
+               Turf Contact Number 
               </label>
               <input
                 type="text"
@@ -119,7 +117,7 @@ const RegistrationForm = () => {
                 htmlFor="place"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Location
+               Turf Location
               </label>
               <input
                 type="text"
@@ -151,7 +149,7 @@ const RegistrationForm = () => {
                 htmlFor="Password"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
-                Image
+               Turf Images
               </label>
               <input
                 type="file"

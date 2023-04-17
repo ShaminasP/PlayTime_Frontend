@@ -6,10 +6,26 @@ import BookingPage from "../../Pages/Turf/Bookings";
 import ReportPage from "../../Pages/Turf/ReportPage";
 import LoginPage from "../../Pages/User/LoginPage";
 import { useSelector } from "react-redux";
-import RegistrationCompleted from "../../Pages/Turf/TurfRegCompleted";
+import RegistrationCompleted from "../../Pages/Turf/TurfRegCompleted.js";
+import { useDispatch, useSelector } from "react-redux";
+import { resetTurfAdmin, setTurfAdmin } from "../../Store/TurfSlice";
 
 const User = () => {
-  const { token } = useSelector((state) => state.user);
+  const TurfName = localStorage.getItem("turfName");
+  const tokenTurf = localStorage.getItem("turfAdminToken");
+  const Dispatch = useDispatch();
+
+  if (TurfName && tokenTurf) {
+    Dispatch(
+      setTurfAdmin({
+        name: TurfName,
+        token: tokenTurf,
+      })
+    );
+  }
+
+  const { token } = useSelector((state) => state.turf);
+  console.log(token);
   return (
     <>
       <Routes>

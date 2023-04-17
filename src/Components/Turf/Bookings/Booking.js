@@ -10,7 +10,7 @@ const Bookings = () => {
 
   const todayDate = new Date(formattedDate);
 
-  const { token } = useSelector((state) => state.user);
+  const { token } = useSelector((state) => state.turf);
   const [booking, setBooking] = useState([]);
   const [upcomingBookings, setUpcomingBookings] = useState([]);
   const [previousBookings, setPreviousBookings] = useState([]);
