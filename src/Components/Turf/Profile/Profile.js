@@ -4,11 +4,9 @@ import { toUpdateTufDetails, viewTurfByOwner } from "../../../API/TurfAuth";
 import Carousel from "./Carousal";
 const TurfPorfile = () => {
   const { token } = useSelector((state) => state.turf);
-  console.log(token);
 
   const [data, setData] = useState({});
   const [editMode, setEditMode] = useState(false);
-  console.log(data);
 
   const updateData = async () => {
     const response = await toUpdateTufDetails(token, data);
