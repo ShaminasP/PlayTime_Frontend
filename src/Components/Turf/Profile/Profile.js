@@ -9,8 +9,9 @@ const TurfPorfile = () => {
   const [editMode, setEditMode] = useState(false);
 
   const updateData = async () => {
-    const response = await toUpdateTufDetails(token, data);
     setEditMode(false);
+    const response = await toUpdateTufDetails(token, data);
+   
   };
 
   useEffect(() => {

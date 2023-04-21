@@ -18,7 +18,6 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     const turfStatus = await viewTurfByOwner(token);
-    console.log(turfStatus);
     const response = await toGetBookingReport(token);
     const result = await toGetBookingCount(token);
     if (
