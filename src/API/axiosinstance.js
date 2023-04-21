@@ -1,7 +1,6 @@
 import Axios from 'axios'
 export const Axiosuser = Axios.create({
-    baseURL: 'http://localhost:3001',
+    baseURL: 'https://playtime-service.onrender.com',
     headers: {'Content-Type': 'application/json'}
 })
 
-// https://playtime-service.onrender.com
