@@ -39,10 +39,10 @@ const Bookings = () => {
     fetchBookings(token);
   }, []);
   return (
-    <div className="overflow-x-auto p-20">
-      <table className="table w-full">
-        <thead>
-          <tr>
+    <div className="overflow-x-auto p-20 bg-white min-h-screen">
+      <table className="table w-full ">
+        <thead className="bg-gray-300" >
+          <tr className="bg-white">
             <th>Booking ID</th>
             <th>User Name</th>
             <th>DATE</th>

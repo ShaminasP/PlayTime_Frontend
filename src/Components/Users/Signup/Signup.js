@@ -42,7 +42,7 @@ function Signup() {
   return (
     <>
       <div className="absolute bg-white w-full h-screen top-0 left-0 opacity-80 z-[-1]" />
-      <div className="flex justify-center items-center h-screen z-10">
+      <div className="flex justify-center items-center h-screen z-10 bg-white">
         {otp ? (
           <OtpForm formData={formData} />
         ) : (
@@ -74,7 +74,7 @@ function Signup() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="leroy"
-                      className="w-full px-3 py-2 border rounded-md border-gray-900  text-gray-900"
+                      className="w-full px-3 py-2 border rounded-md border-gray-900 bg-white text-gray-900"
                     />
                     {dataError.name && (
                       <p className="text-red-500 mt-1 text-xs italic">
@@ -94,7 +94,7 @@ function Signup() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="leroy@jenkins.com"
-                      className="w-full px-3 py-2 border rounded-md border-gray-900  text-gray-900"
+                      className="w-full px-3 py-2 border rounded-md border-gray-900 bg-white text-gray-900"
                     />
                     {dataError.email && (
                       <p className="text-red-500 mt-1 text-xs italic">
@@ -114,7 +114,7 @@ function Signup() {
                       value={formData.mobile}
                       onChange={handleChange}
                       placeholder="7034002589"
-                      className="w-full px-3 py-2 border rounded-md  border-gray-900  text-gray-900"
+                      className="w-full px-3 py-2 border rounded-md  border-gray-900 bg-white text-gray-900"
                     />
                     {dataError.mobile && (
                       <p className="text-red-500 mt-1 text-xs italic">
@@ -136,7 +136,7 @@ function Signup() {
                       value={formData.password}
                       onChange={handleChange}
                       placeholder="*****"
-                      className="w-full px-3 py-2 border rounded-md border-gray-900  text-gray-900"
+                      className="w-full px-3 py-2 border rounded-md border-gray-900 bg-white text-gray-900"
                     />
                     {dataError.password && (
                       <p className="text-red-500 mt-1 text-xs italic">

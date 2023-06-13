@@ -13,7 +13,6 @@ const SearchBar = ({ error }) => {
   const onChange = async (e) => {
     setSearch(e.target.value);
     const results = await Location_Search(search);
-    console.log(results);
     setSuggestion(results.map((f) => f.place_name));
   };
 
@@ -33,7 +32,7 @@ const SearchBar = ({ error }) => {
   };
 
   return (
-    <div
+    <div className="relative"
       style={{
         display: "flex",
         alignItems: "center",
@@ -43,13 +42,13 @@ const SearchBar = ({ error }) => {
       <input
         type="search"
         name="search"
-        className="mx-5 h-8 px-3  rounded-lg border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-red-500"
+        className="mx-5 h-8 px-3  rounded-lg border bg-white border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-red-500"
         placeholder="Search..."
         value={search ? search : selected}
         onInput={onChange}
       />
       {suggestions.length > 0 && (
-        <ul className="absolute z-10 bg-white border border-gray-400 w-72 max-h-56 overflow-y-scroll mt-32 rounded shadow-md">
+        <ul className="absolute top-[-90px] right-0 z-10 bg-white border border-gray-400 w-72 max-h-56 overflow-y-scroll mt-32 rounded shadow-md">
           {suggestions.map((suggestion, index) => (
             <li
               key={index}

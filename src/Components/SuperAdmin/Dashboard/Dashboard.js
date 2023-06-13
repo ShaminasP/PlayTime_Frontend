@@ -28,7 +28,7 @@ const Dashboard = () => {
   return (
     <div>
       <CountStatus counts={counts} />
-      <div className="flex justify-between ">
+      <div className="flex justify-between bg-white ">
         <Barchart data={data} />
         <LineGraph data={data} />
       </div>

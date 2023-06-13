@@ -1,30 +1,35 @@
 import { useState } from "react";
 
 const BookingDetails = ({ previousbookings, upcomingBooking }) => {
+  // console.log("pre",previousbookings);
+  // console.log("upc",upcomingBooking);
   const [showBookings, setShowBookings] = useState(true);
 
   return (
-    <div className="overflow-x-auto">
-      <table className="table w-full">
-        <thead>
-          <tr>
-            <th>BOOKING ID</th>
-            <th>TURF</th>
-            <th>DATE</th>
-            <th>TIME</th>
-            <th>STATUS</th>
-          </tr>
-        </thead>
-        <tbody>
-          {showBookings ? (
+    
+      <div className="container p-2 mx-auto sm:p-4 text-gray-800 mt-10 bg-white min-h-screen">
+        <h2 className="mb-4 text-2xl font-semibold leading-tight"></h2>
+        <div className="overflow-x-auto">
+          <table className="min-w-full text-xs">
+            <thead className="bg-gray-300">
+              <tr className="text-center">
+                <th className="p-3">BOOKING ID</th>
+                <th className="p-3">TURF</th>
+                <th className="p-3">DATE</th>
+                <th className="p-3">TIME</th>
+                <th className="p-3">STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+            {showBookings ? (
             <>
               {upcomingBooking.map((booking, index) => (
-                <tr key={index}>
-                  <th>{booking?._id}</th>
-                  <td>{booking?.turf?.turfName}</td>
-                  <td>{new Date(booking?.bookDate).toLocaleDateString()}</td>
-                  <td>{booking?.time}</td>
-                  <td>
+                <tr className="text-center" key={index}>
+                  <th className="p-2">{booking?._id}</th>
+                  <td className="p-2">{booking?.turf?.turfName}</td>
+                  <td className="p-2">{new Date(booking?.bookDate).toLocaleDateString()}</td>
+                  <td className="p-2">{booking?.time}</td>
+                  <td className="p-2">
                     {" "}
                     {booking?.payment === "Success" ? (
                       <button className="btn-sm btn-success p-2 rounded-3xl">
@@ -42,12 +47,12 @@ const BookingDetails = ({ previousbookings, upcomingBooking }) => {
           ) : (
             <>
               {previousbookings.map((booking, index) => (
-                <tr key={index}>
-                  <th>{booking?._id}</th>
-                  <td>{booking?.turf?.turfName}</td>
-                  <td>{new Date(booking?.bookDate).toLocaleDateString()}</td>
-                  <td>{booking?.time}</td>
-                  <td>
+                <tr className="text-center"  key={index}>
+                  <th className="p-2">{booking?._id}</th>
+                  <td className="p-2">{booking?.turf?.turfName}</td>
+                  <td className="p-2">{new Date(booking?.bookDate).toLocaleDateString()}</td>
+                  <td className="p-2">{booking?.time}</td>
+                  <td className="p-2">
                     {" "}
                     {booking?.payment === "Success" ? (
                       <button className="btn-sm btn-success p-2 rounded-3xl">
@@ -63,12 +68,12 @@ const BookingDetails = ({ previousbookings, upcomingBooking }) => {
               ))}
             </>
           )}
-        </tbody>
-      </table>
-      {showBookings ? (
+            </tbody>
+          </table>
+           {showBookings ? (
         <button
-          className="btn btn-border-2 float-right mt-5"
-          onClick={() => setShowBookings(false)}
+        className="btn btn-border-2 float-right mt-5"
+        onClick={() => setShowBookings(false)}
         >
           Show Previous Bookings
         </button>
@@ -76,11 +81,15 @@ const BookingDetails = ({ previousbookings, upcomingBooking }) => {
         <button
           className="btn btn-border-2 float-right mt-5"
           onClick={() => setShowBookings(true)}
-        >
+          >
           Show UpcomingBookings Orders
         </button>
       )}
-    </div>
+        </div>
+      </div>
+
+      
+  
   );
 };
 

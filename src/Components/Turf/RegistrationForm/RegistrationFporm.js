@@ -58,7 +58,7 @@ const RegistrationForm = ({ div }) => {
   return (
     <>
       <div ref={div} className="flex items-center justify-center p-12 bg-gray-100">
-        <div className="mx-auto w-full max-w-[550px]">
+        <div className="mx-auto w-full max-w-[550px] ">
           {error && <AlertMessage message={error} close={() => setError("")} />}
           <form onSubmit={onSubmit}>
             <div className="mb-5">

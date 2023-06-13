@@ -23,15 +23,15 @@ const TurfPorfile = () => {
   }, []);
 
   return (
-    <section className="body-font text-gray-600">
-      <div className="container mx-auto flex flex-col items-center justify-center px-5 py-24">
+    <section className="body-font text-gray-600 bg-white">
+      <div className="container mx-auto flex flex-col items-center justify-center px-5 pt-20">
         <Carousel images={data?.images} />
-        <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 py-5">
+        <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 py-3">
           {data?.turfName}
         </h1>
         <div className="-mx-2 flex flex-wrap sm:mx-auto sm:mb-2 lg:w-4/5">
           <div className="w-full p-2 sm:w-1/2">
-            <div className="flex h-full items-center rounded bg-gray-100 p-4">
+            <div className="flex h-full items-center rounded bg-gray-100 p-2">
               <div className="flex">
                 <label htmlFor="" className="font-medium">
                   Location:{" "}
@@ -58,7 +58,7 @@ const TurfPorfile = () => {
           </div>
 
           <div className="w-full p-2 sm:w-1/2">
-            <div className="flex h-full items-center rounded bg-gray-100 p-4">
+            <div className="flex h-full items-center rounded bg-gray-100 p-2">
               <div className="flex">
                 <label htmlFor="" className="font-medium">
                   Contact Number:{" "}
@@ -85,7 +85,7 @@ const TurfPorfile = () => {
           </div>
 
           <div className="w-full p-2 sm:w-1/2">
-            <div className="flex h-full items-center rounded bg-gray-100 p-4">
+            <div className="flex h-full items-center rounded bg-gray-100 p-2">
               <div className="flex">
                 <label htmlFor="" className="font-medium">
                   Email:{" "}
@@ -112,7 +112,7 @@ const TurfPorfile = () => {
           </div>
 
           <div className="w-full p-2 sm:w-1/2">
-            <div className="flex h-full items-center rounded bg-gray-100 p-4">
+            <div className="flex h-full items-center rounded bg-gray-100 p-2">
               <div className="flex">
                 <label htmlFor="" className="font-medium">
                   Opening Time:{" "}
@@ -139,7 +139,7 @@ const TurfPorfile = () => {
           </div>
 
           <div className="w-full p-2 sm:w-1/2">
-            <div className="flex h-full items-center rounded bg-gray-100 p-4">
+            <div className="flex h-full items-center rounded bg-gray-100 p-2">
               <div className="flex">
                 <label htmlFor="" className="font-medium">
                   Closing Time:{" "}
@@ -166,7 +166,7 @@ const TurfPorfile = () => {
           </div>
 
           <div className="w-full p-2 sm:w-1/2">
-            <div className="flex h-full items-center rounded bg-gray-100 p-4">
+            <div className="flex h-full items-center rounded bg-gray-100 p-2">
               <div className="flex">
                 <label htmlFor="" className="font-medium">
                   Fee:{" "}
@@ -194,14 +194,14 @@ const TurfPorfile = () => {
 
           {editMode ? (
             <button
-              className="flex mx-auto mt-16 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
+              className="flex mx-auto mt-12 text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
               onClick={() => updateData()}
             >
               Save
             </button>
           ) : (
             <button
-              className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+              className="flex mx-auto mt-12 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
               onClick={() => setEditMode(true)}
             >
               Edit

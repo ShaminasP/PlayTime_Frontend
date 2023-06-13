@@ -39,7 +39,7 @@ const UserProfile = () => {
       setBookings(response?.data);
       const upcomingBooking = response?.data.filter((booking) => {
         const bookedDate = new Date(booking?.bookDate);
-        return bookedDate => todayDate;
+        return bookedDate >= todayDate;
       });
       setUpcomingBookings(upcomingBooking);
 
@@ -47,6 +47,7 @@ const UserProfile = () => {
         const bookedDate = new Date(booking?.bookDate);
         return bookedDate < todayDate;
       });
+
       setPreviousBookings(previousBooking);
       setShowBookings(true);
     }
@@ -77,7 +78,7 @@ const UserProfile = () => {
   }, []);
 
   return (
-    <section className="p-6 bg-white text-gray-900 mt-16 border-3">
+    <section className="p-6 bg-white text-gray-900 mt-16 border-3 min-h-screen">
       <form
         onSubmit={onSubmit}
         className="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid"
@@ -99,7 +100,7 @@ const UserProfile = () => {
                 value={users?.name}
                 disabled={!edit}
                 placeholder="Username"
-                className="w-full p-2 rounded-md  border-gray-100 text-gray-900"
+                className="w-full p-2 rounded-md bg-white  border-gray-100 text-gray-900"
               />
               {dataError.name && (
                 <p className="text-red-500 mt-1 text-xs italic">
@@ -119,7 +120,7 @@ const UserProfile = () => {
                 disabled={!edit}
                 value={users?.mobile}
                 placeholder="Mobile"
-                className="w-full py-2 rounded-md  border-gray-100 text-gray-900"
+                className="w-full py-2 rounded-md bg-white border-gray-100 text-gray-900"
               />
               {dataError.mobile && (
                 <p className="text-red-500 mt-1 text-xs italic">
@@ -139,7 +140,7 @@ const UserProfile = () => {
                 onChange={onChange}
                 type="text"
                 placeholder="email"
-                className="w-full py-2 rounded-md  border-gray-100 text-gray-900"
+                className="bg-white w-full py-2 rounded-md  border-gray-100 text-gray-900"
               />
               {dataError.email && (
                 <p className="text-red-500 mt-1 text-xs italic">
@@ -161,7 +162,12 @@ const UserProfile = () => {
           </div>
         </fieldset>
       </form>
-      {showBookings && <BookingDetails previousbookings={previousBookings} upcomingBooking={upcomingBookings}/>}
+      {showBookings && (
+        <BookingDetails
+          previousbookings={previousBookings}
+          upcomingBooking={upcomingBookings}
+        />
+      )}
     </section>
   );
 };

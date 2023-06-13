@@ -18,8 +18,8 @@ const BookingReport = () => {
   }, []);
 
   return (
-    <div className="overflow-x-auto p-20">
-      <table className="table w-full">
+    <div className="overflow-x-auto p-20 bg-white min-h-screen">
+      <table className="table w-full bg-white">
         <thead>
           <tr className="text-center">
             <th>DATE</th>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const CountStatus = ({counts}) => {
   return (
-    <section className="p-8 my-6 bg-gray-100 text-gray-800 mt-16">
+    <section className="p-8  bg-gray-100 text-gray-800 mt-16">
       <div className="container flex justify-evenly ">
         <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gray-50 text-gray-800 cursor-pointer">
           <Link to={'/admin/users'}>

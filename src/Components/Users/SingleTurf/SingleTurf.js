@@ -21,7 +21,7 @@ const SingleTurf = () => {
 
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font bg-white">
         {showCalender ? (
           <Booking
             closingHour={data.closingHour}
@@ -30,17 +30,17 @@ const SingleTurf = () => {
             setShowCalender={setShowCalender}
           />
         ) : (
-          <div className="container mx-auto flex flex-col items-center justify-center px-5 py-24">
+          <div className="container mx-auto flex flex-col items-center justify-center px-5 pt-20 min-h-screen">
             <img
-              className="w-[450px] md:max-w-2xl rounded mb-10 object-cover object-center"
+              className="w-[400px] md:max-w-2xl rounded mb-10 object-cover object-center"
               alt="hero"
               src={data?.images?.[0].location}
             />
             <div className="w-full lg:w-2/3 text-center">
-              <h1 className="text-3xl sm:text-4xl font-medium text-gray-900 mb-4">
+              <h1 className="text-3xl sm:text-4xl font-medium text-gray-900 mb-2">
                 <span className="font-bold">{data?.turfName}</span>
               </h1>
-              <span className="text-gray-600 p-2 "> {data?.location}</span>
+              <span className="text-gray-600  "> {data?.location}</span>
 
               <h3 className="text-2xl font-semibold p-2">₹{data?.fee}</h3>
               <div className="flex justify-center items-center mb-4">

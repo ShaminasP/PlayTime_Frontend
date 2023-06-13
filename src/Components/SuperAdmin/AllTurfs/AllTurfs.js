@@ -26,7 +26,7 @@ const Table = () => {
 
   return (
     <>
-      <div className="container p-2 mx-auto sm:p-4 text-gray-800 mt-10">
+      <div className="container p-2 mx-auto sm:p-4 text-gray-800 mt-10 bg-white min-h-screen">
         <h2 className="mb-4 text-2xl font-semibold leading-tight"></h2>
         <div className="overflow-x-auto">
           {error ? (

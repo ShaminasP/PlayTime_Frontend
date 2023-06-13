@@ -6,9 +6,9 @@ const text = "Let's Play is the online portal and mobile app for sports enthusia
 const Content = () => {
     return (
         <>
-            <div className="md:px-40 sm:px-20 px-10 md:pt-32 sm:pt-20 pt-10 md:pb-32 sm:pb-20 pb-10">
+            <div className="md:px-40 sm:px-20 px-10 md:pt-32 sm:pt-20 pt-10 md:pb-32 sm:pb-20 pb-10 bg-white">
                 <h1 className="font-bold text-4xl">COLLABORATE WITH US</h1>
-                <p className="mt-5 text-lg text-justify flex-wrap">{text}</p>
+                <p className="mt-5 text-lg text-justify flex-wrap text-black">{text}</p>
             </div>
         </>
     )

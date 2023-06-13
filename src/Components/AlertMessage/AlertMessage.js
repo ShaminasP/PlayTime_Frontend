@@ -1,7 +1,7 @@
 const AlertMessage = (props) => {
 
   return (
-    <div className="alert border border-red-600 shadow-lg mt-3 ">
+    <div className="alert border border-red-600 shadow-lg mt-3  bg-white">
       <div className="h-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"

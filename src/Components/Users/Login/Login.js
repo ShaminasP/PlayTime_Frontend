@@ -63,8 +63,8 @@ function Login() {
   return (
     <>
       <div className="absolute bg-white w-full h-screen top-0 left-0 opacity-80 z-[-1]" />
-      <div className="flex justify-center items-center h-screen z-10">
-        <div className="flex flex-col p-6 rounded-md sm:p-10  border-2  text-black">
+      <div className="flex justify-center items-center h-screen z-10 bg-white">
+        <div className="flex flex-col p-6 rounded-md sm:p-10  border-2 bg-white text-black">
           <div className="mb-8 text-center">
             <h1 className="my-3 text-4xl font-bold">Login</h1>
             <p className="text-sm text-gray-400">
@@ -72,7 +72,7 @@ function Login() {
             </p>
             {error && <AlertMessage message={error} close={handleClose} />}
           </div>
-          <form onSubmit={handleSubmit} className="space-y-12 ng- ng- ng-">
+          <form onSubmit={handleSubmit} className="space-y-12 bg-white">
             <div className="space-y-4">
               <div>
                 <label htmlFor="email" className="block mb-2 text-sm">
@@ -85,7 +85,7 @@ function Login() {
                   onChange={handleChange}
                   id="email"
                   placeholder="leroy@jenkins.com"
-                  className="w-full px-3 py-2 border rounded-md  border-black dark:text-white  text-black"
+                  className="w-full px-3 py-2 border rounded-md  border-black bg-white text-black"
                 />
                 {dataError.email && (
                   <p className="text-red-500 mt-1 text-xs italic">
@@ -106,7 +106,7 @@ function Login() {
                   placeholder="*****"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md border-black text-gray-900"
+                  className="w-full px-3 py-2 border rounded-md border-black bg-white text-gray-900"
                 />
                 {dataError.password && (
                   <p className="text-red-500 mt-1 text-xs italic">

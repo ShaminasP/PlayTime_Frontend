@@ -38,11 +38,11 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-white py-1">
       {turfStatus ? (
         <>
           <CountStatus counts={count} data={data} />
-          <div className="flex justify-between">
+          <div className="flex justify-between bg-white">
             <Barchart data={data} />
             <LineGraph data={data} />
           </div>
